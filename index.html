@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FITZONE - Modern Fitness & Gym website">
+  <title>FITZONE — Fitness & Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+
+  <header class="header" id="header">
+    <nav class="navbar container">
+      <a class="brand" href="#home"><span>FIT</span>ZONE</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#tools">Tools</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#pricing">Membership</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Ubah tema">☾</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">TRAIN • EAT • RECOVER</span>
+          <h1>BUILD A <span>STRONGER</span> VERSION OF YOU.</h1>
+          <p>Program latihan, tools kebugaran, dan jadwal yang membantu kamu membangun rutinitas olahraga yang konsisten.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programs">Explore Programs <span>→</span></a>
+            <a class="btn btn-ghost" href="#tools">Try Fitness Tools</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>24/7</strong><span>Workout Access</span></div>
+            <div><strong>12+</strong><span>Training Programs</span></div>
+            <div><strong>100%</strong><span>Responsive UI</span></div>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-down" href="#programs">Scroll ↓</a>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">TRAINING PROGRAMS</span>
+          <h2>Choose your <span>workout.</span></h2>
+          <p>Pilih program sesuai tujuan latihanmu dan mulai secara bertahap.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program-card featured reveal">
+            <div class="card-icon">⚡</div><span class="tag">POPULAR</span>
+            <h3>Muscle Building</h3>
+            <p>Latihan resistance untuk meningkatkan kekuatan dan perkembangan otot.</p>
+            <ul><li>4 hari / minggu</li><li>Strength focused</li><li>Progressive overload</li></ul>
+            <button class="text-btn program-btn" data-program="Muscle Building">View Program →</button>
+          </article>
+          <article class="program-card reveal">
+            <div class="card-icon">🔥</div>
+            <h3>Conditioning</h3>
+            <p>Kombinasi latihan untuk membangun stamina dan kebugaran umum.</p>
+            <ul><li>3 hari / minggu</li><li>Cardio + strength</li><li>Full body</li></ul>
+            <button class="text-btn program-btn" data-program="Conditioning">View Program →</button>
+          </article>
+          <article class="program-card reveal">
+            <div class="card-icon">🏃</div>
+            <h3>Running</h3>
+            <p>Program lari bertahap untuk membantu meningkatkan daya tahan.</p>
+            <ul><li>3 sesi / minggu</li><li>Easy + tempo</li><li>Recovery day</li></ul>
+            <button class="text-btn program-btn" data-program="Running">View Program →</button>
+          </article>
+          <article class="program-card reveal">
+            <div class="card-icon">🧘</div>
+            <h3>Mobility</h3>
+            <p>Rutinitas mobility dan recovery untuk melengkapi latihan utama.</p>
+            <ul><li>15–30 menit</li><li>Low impact</li><li>Recovery focused</li></ul>
+            <button class="text-btn program-btn" data-program="Mobility">View Program →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tools-section" id="tools">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">FITNESS TOOLS</span>
+          <h2>Train with <span>purpose.</span></h2>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card reveal">
+            <div class="tool-head"><div><span class="tool-label">HEALTH CHECK</span><h3>BMI Calculator</h3></div><span class="tool-icon">📊</span></div>
+            <div class="form-grid">
+              <label>Weight (kg)<input id="weight" type="number" min="1" max="500" placeholder="70"></label>
+              <label>Height (cm)<input id="height" type="number" min="50" max="250" placeholder="175"></label>
+            </div>
+            <button class="btn btn-primary full" id="bmiBtn">Calculate BMI</button>
+            <div class="result-box" aria-live="polite"><strong id="bmiValue">--</strong><span id="bmiStatus">Masukkan data untuk melihat hasil.</span></div>
+            <small>BMI adalah indikator umum dan bukan penilaian kesehatan lengkap.</small>
+          </div>
+
+          <div class="tool-card reveal">
+            <div class="tool-head"><div><span class="tool-label">WORKOUT TOOL</span><h3>Workout Timer</h3></div><span class="tool-icon">⏱️</span></div>
+            <div class="timer-display" id="timerDisplay">00:00</div>
+            <div class="timer-controls">
+              <button class="btn btn-primary" id="startTimer">Start</button>
+              <button class="btn btn-secondary" id="pauseTimer">Pause</button>
+              <button class="btn btn-secondary" id="resetTimer">Reset</button>
+            </div>
+            <p class="timer-note">Gunakan timer untuk mencatat durasi sesi latihanmu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="schedule">
+      <div class="container">
+        <div class="section-heading split reveal">
+          <div><span class="eyebrow">WEEKLY SCHEDULE</span><h2>Plan. <span>Train.</span> Recover.</h2></div>
+          <p>Contoh jadwal mingguan yang seimbang antara latihan dan recovery.</p>
+        </div>
+        <div class="schedule">
+          <div class="schedule-row head"><span>DAY</span><span>SESSION</span><span>FOCUS</span><span>STATUS</span></div>
+          <div class="schedule-row"><span>MON</span><strong>Push</strong><span>Chest • Shoulder • Triceps</span><b class="status active">TRAIN</b></div>
+          <div class="schedule-row"><span>TUE</span><strong>Run</strong><span>Easy 3 KM</span><b class="status active">TRAIN</b></div>
+          <div class="schedule-row"><span>WED</span><strong>Pull</strong><span>Back • Biceps</span><b class="status active">TRAIN</b></div>
+          <div class="schedule-row"><span>THU</span><strong>Run</strong><span>Easy 3 KM</span><b class="status active">TRAIN</b></div>
+          <div class="schedule-row"><span>FRI</span><strong>Legs + Abs</strong><span>Lower body • Core</span><b class="status active">TRAIN</b></div>
+          <div class="schedule-row"><span>SAT</span><strong>Rest</strong><span>Recovery</span><b class="status rest">REST</b></div>
+          <div class="schedule-row"><span>SUN</span><strong>Rest</strong><span>Recovery</span><b class="status rest">REST</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">MEMBERSHIP</span><h2>Simple plans. <span>Serious training.</span></h2></div>
+        <div class="pricing-grid">
+          <article class="price-card reveal"><span>STARTER</span><h3>Free</h3><p>Untuk mencoba tools dasar FITZONE.</p><ul><li>✓ BMI Calculator</li><li>✓ Workout Timer</li><li>✓ Weekly Schedule</li></ul><button class="btn btn-secondary join-btn" data-plan="Starter">Choose Plan</button></article>
+          <article class="price-card popular reveal"><span>PRO</span><div class="popular-badge">MOST POPULAR</div><h3>Rp99K<span>/bulan</span></h3><p>Untuk rutinitas latihan yang lebih terstruktur.</p><ul><li>✓ Semua fitur Starter</li><li>✓ Program latihan</li><li>✓ Progress tracking</li></ul><button class="btn btn-primary join-btn" data-plan="Pro">Choose Plan</button></article>
+          <article class="price-card reveal"><span>ELITE</span><h3>Rp199K<span>/bulan</span></h3><p>Pengalaman lengkap untuk latihan yang lebih serius.</p><ul><li>✓ Semua fitur Pro</li><li>✓ Training planner</li><li>✓ Personal dashboard</li></ul><button class="btn btn-secondary join-btn" data-plan="Elite">Choose Plan</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-box reveal">
+        <div><span class="eyebrow">READY?</span><h2>Make your next workout count.</h2><p>Mulai dari satu sesi, lalu bangun konsistensi.</p></div>
+        <a href="#contact" class="btn btn-primary">Get Started →</a>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="section-heading reveal"><span class="eyebrow">CONTACT</span><h2>Let's build your <span>routine.</span></h2><p>Kirim pesan untuk pertanyaan, saran, atau informasi membership.</p></div>
+        <form class="contact-form reveal" id="contactForm">
+          <label>Name<input id="contactName" type="text" required placeholder="Nama kamu"></label>
+          <label>Email<input type="email" required placeholder="email@example.com"></label>
+          <label>Message<textarea rows="5" required placeholder="Tulis pesan..."></textarea></label>
+          <button class="btn btn-primary" type="submit">Send Message →</button>
+          <p class="form-message" id="formMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#home"><span>FIT</span>ZONE</a>
+      <p>© 2026 FITZONE. Frontend project for Visual Studio Code.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Tutup">×</button>
+      <span class="eyebrow">FITZONE PROGRAM</span>
+      <h2 id="modalTitle">Program</h2>
+      <p id="modalText"></p>
+      <div id="modalList" class="modal-list"></div>
+      <button class="btn btn-primary" id="modalAction">Got it</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
